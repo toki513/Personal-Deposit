@@ -1,36 +1,38 @@
+
 document.getElementById("withdraw-btn").addEventListener('click', function(){
 
-    const WithdrawId = document.getElementById("withdraw-id")
-    const WithdrawIdString = WithdrawId.value
-    const newWithdraw = parseFloat(WithdrawIdString)
-    
-    console.log(newWithdraw)
-    WithdrawId.value = '';
+    const Withdraw= document.getElementById("withdraw-id")
+    const WithdrawId = Withdraw.value 
+    const WithdrawIdString = parseFloat(WithdrawId)
+    const WithdrawIdNumber = WithdrawIdString
 
-    if(isNaN(newWithdraw)){
-        alert("Enter a Number")
+    Withdraw.value = ''
+    if(isNaN(WithdrawIdNumber)){
+        alert("Enter a Number!!")
+    }
+
+    const amountwithdraw = document.getElementById("amount-withdraw")
+    const amountwithdrawString = amountwithdraw.innerText
+    const amountwithdrawNumber = parseFloat(amountwithdrawString)
+    const updateWithdraw = amountwithdrawNumber
+
+
+    const totalWithdraw = updateWithdraw + WithdrawIdNumber
+    amountwithdraw.innerText = totalWithdraw
+
+    const balanceDeposit = document.getElementById("balance-deposit")
+    const balance = balanceDeposit.innerText
+    const balanceDepositString= parseFloat(balance)
+
+
+    if(WithdrawIdNumber > balanceDepositString){
+        alert("Not Enough Balance!!")
+        amountwithdraw.innerText= updateWithdraw
         return;
     }
 
-    const pamountwithdraw = document.getElementById("amount-withdraw")
-    const pamountwithdrawString =pamountwithdraw.innerText
-    const pamountwithdrawNumber = parseFloat(pamountwithdrawString)
-
-    const totalWithdraw = newWithdraw + pamountwithdrawNumber
-    pamountwithdraw.innerText = totalWithdraw
-
-    const wbalancedeposit = document.getElementById("balance-deposit")
-    const wbalancedepositString = wbalancedeposit.innerText
-    const wbalancedepositNumber = parseFloat(wbalancedepositString)
-
-    if(newWithdraw > wbalancedepositNumber){
-        alert("Not Enough Money!!")
-        return;
-    }
+    const totalBalance = balanceDepositString - WithdrawIdNumber
+    balanceDeposit.innerText= totalBalance
 
 
-    const wlastbalance = wbalancedepositNumber - newWithdraw
-    wbalancedeposit.innerText = wlastbalance
-
-    
 })

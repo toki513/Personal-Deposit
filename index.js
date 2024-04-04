@@ -1,18 +1,14 @@
 
 document.getElementById("submit-btn").addEventListener('click', function(){
-    
-    const mailid=document.getElementById("mail-id")
-    const mail=mailid.value
-    console.log(mail)
+    const mailId = document.getElementById("mail-id")
+    const mail = mailId.value 
 
-    const passwordid = document.getElementById("pass-id")
-    const password = passwordid.value
-    console.log(password)
+    const passId = document.getElementById("pass-id")
+    const pass = passId.value
 
-    if(mail === "tahmid@gmail.com" && password === "hello"){
-        window.location.href='bank.html'
-    } else{
+    if(mail === 'tahmid@gmail.com' && pass === "hello"){
+        window.location.href="bank.html"
+    }else{
         alert("Invalid User")
     }
 })
-

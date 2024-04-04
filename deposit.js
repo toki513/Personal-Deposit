@@ -1,27 +1,25 @@
 
-document.getElementById("deposit-btn").addEventListener('click', function(){
-    
-    const depositid= document.getElementById("deposit-id")
-    const NewdepositString = depositid.value 
-    const Newdeposit=parseFloat(NewdepositString)
-    console.log(Newdeposit)
+document.getElementById("deposit-btn").addEventListener('click',function(){
 
-    const totalDepositAmount = document.getElementById("add-deposit")
-    const PredepositAmountString = totalDepositAmount.innerText
-    const PredepositAmount = parseFloat(PredepositAmountString)
-    
-    const currentDeposit = PredepositAmount + Newdeposit
-    totalDepositAmount.innerText = currentDeposit
+    const newdeposit = document.getElementById("deposit-id")
+    const deposit = newdeposit.value 
+    const depositString = parseFloat(deposit)
+    const depositNumber = depositString
 
-    const balanceDeposit=document.getElementById("balance-deposit")
+    const adddeposit = document.getElementById("add-deposit")
+    const updateddepositString = adddeposit.innerText
+    const updateddepositNumber = parseFloat(updateddepositString)
+    
+    const totalDeposit= updateddepositNumber + depositNumber
+    adddeposit.innerText = totalDeposit
+    
+    newdeposit.value=''
+
+    const balanceDeposit = document.getElementById("balance-deposit")
     const balanceDepositString = balanceDeposit.innerText
-    const NewBalanceDeposit = parseFloat(balanceDepositString)
+    const balanceDepositNumber = parseFloat(balanceDepositString)
+    const finalDeposit = balanceDepositNumber
 
-    const latestBalance = NewBalanceDeposit + Newdeposit 
-    balanceDeposit.innerText = latestBalance
-
-    depositid.value='';
-    
+    const balance = finalDeposit + depositNumber
+    balanceDeposit.innerText = balance
 })
-
-
